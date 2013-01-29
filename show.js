@@ -1,11 +1,5 @@
 var search_url = 'http://search.twitter.com/search.json?q=';
 
-
-function makeBlank()
-{
-	$('#input-keyword-area').attr('value', "");
-};
-
 function runScript(e) {
     if (e.keyCode == 13) {
         searchTwitter();
