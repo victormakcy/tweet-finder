@@ -5,7 +5,7 @@
 	<meta name="keywords" content="Victor Mak, victor mak waterloo, victor mak computer science, v2mak" />
 	<meta name="google-site-verification" content="avIVMZKEOE-9ZkHjdW-oJT1o-4jWRjh1hH-5s4NbFgg" />
 	<meta name="author" content="Victor Mak Test WebApp" />
-	<title>Victor Mak Test WebApp</title>
+	<title>Tweet Finder</title>
 <link href="style.css" rel="stylesheet" type="text/css" />    
 <script type="text/javascript" src="show.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
@@ -13,25 +13,16 @@
 </head>
 
 <body>
-	
-	<div id="title">
-		<h1>Tweet Finder</h1>
-	</div>
-
-	<div id="mainArea">
-		<input id="input-keyword-area" type="text" name="keyword" onkeypress="runScript(event);" placeholder="Enter A Term To Search">
-		
-		<div id="tweets-area">
-
-			<ul id="stream"></ul> 
-
+	<div class="container">
+		<div id="title">
+			<h1>Tweet Finder</h1>
 		</div>
-
-
+		<div class="main-area">
+			<input id="input-keyword-area" type="text" name="keyword" onkeypress="runScript(event);" placeholder="Enter A Term To Search">
+		</div>
 	</div>
-
-	<div id="footer">
+	<div class="tweets-area">
+		<ul id="stream"></ul> 
 	</div>
-
 </body>
 

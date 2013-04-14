@@ -12,7 +12,7 @@ function searchTwitter()
 
 	$.ajax({
 		type: 'GET',
-		url: search_url + queryTerm,
+		url: search_url + queryTerm + '&rpp=100',
 		dataType: 'jsonp',
 		success: function(result){
 			showTweets(result);
@@ -34,7 +34,7 @@ function showTweets(result){
 
 		date = date.substr(0,index-1)
 
-		var addingTweet = '<li><div id="profile-pic"><img src="' + pictureURL + '"/><p id="name"><a href="http://www.twitter.com/'+name+'" target="_blank">@'+ name +'</a></p><p id="date">' + date + '</p></div><div id="tweet">' + message + '</div></li>';
+		var addingTweet = '<li class="tweet-cards"><div id="profile-pic"><img src="' + pictureURL + '"/><p id="name"><a href="http://www.twitter.com/'+name+'" target="_blank">@'+ name +'</a></p><p id="date">' + date + '</p></div><div id="tweet">' + message + '</div></li>';
 
 		$('#stream').append(addingTweet);
 

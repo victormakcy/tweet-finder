@@ -1,6 +1,53 @@
 body{
-	background-color:#32ccfe;
+	background-color:#0084B4;
 }
+
+/*top title portion*/
+.container{
+	width:1200px;
+	height:230px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#title{
+	color:white;
+	position:relative;
+	font-size:3em;
+}
+
+.main-area #input-keyword-area{
+	width: 610px;
+	font-size: 26px;
+	border-radius:5px;
+	position:relative;
+}
+
+/*tweets area*/
+.tweets-area{
+	width:1200px;
+	height:1200px;
+	margin: auto;
+}
+
+#stream{
+	list-style-type: none;
+	position:relative;
+}
+
+/*tweet cards*/
+#stream .tweet-cards{
+	background-color: white;
+	width:30%;
+	height:300px;
+	margin-bottom:20px;
+	border-radius: 10px;
+	float: left;
+	margin-right:13px;
+	margin-left:13px;
+}
+
+
 
 p#name{
 	display:inline-block;
@@ -15,46 +62,12 @@ p#date{
 	left:56px;
 }
 
-li{
-	background-color: white;
-	width:67%;
-	margin-top:20px;
-	margin-bottom:20px;
-	border-radius: 10px;
-}
-
-h1{
-	font-size:45px;
-}
-
-#title{
-	color:white;
-	position:relative;
-	left:500px;
-}
-
-#input-keyword-area{
-	width: 60%;
-	font-size: 26px;
-	border-radius:5px;
-	position:relative;
-	top:65px;
-	left:256px;
-}
-
 #profile-pic{
 	display:inline-block;
 	position:relative;
 	left:10px;
 	padding-top:10px;
 	margin-bottom:-56px;
-}
-
-#stream{
-	list-style-type: none;
-	position:relative;
-	top:96px;
-	left:188px;
 }
 
 #tweet{
