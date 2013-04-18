@@ -12,11 +12,10 @@ function searchTwitter()
 
 	$.ajax({
 		type: 'GET',
-		url: search_url + queryTerm + '&rpp=100',
+		url: search_url + queryTerm + '&rpp=90',
 		dataType: 'jsonp',
 		success: function(result){
 			showTweets(result);
-			console.log(result);
 		}
 	});
 };
@@ -35,7 +34,7 @@ function showTweets(result){
 
 		date = date.substr(0,index-1)
 
-		var addingTweet = '<li class="tweet-cards"><div class="card-top"></div><div class="profile-pic"><img src="' + pictureURL + '"/><p id="name"><a href="http://www.twitter.com/'+name+'" target="_blank">@'+ name +'</a></p><p id="date">' + date + '</p></div><div class="card-bottom"><div id="tweet">' + message + '</div></li>';
+		var addingTweet = '<li class="tweet-cards"><div class="card-top"></div><div class="profile-pic"><img src="' + pictureURL + '"/></div><div class="card-bottom"><p id="name"><a href="http://www.twitter.com/'+name+'" target="_blank">@'+ name +'</a></p><div class="tweet">' + message + '</div><p id="date">' + date + '</p></div></li>';
 
 		$('#stream').append(addingTweet);
 

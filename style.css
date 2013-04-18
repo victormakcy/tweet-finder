@@ -11,6 +11,7 @@ body{
 }
 
 #title{
+	font-family: courier, helvetica, arial;
 	color:white;
 	position:relative;
 	font-size:3em;
@@ -36,54 +37,69 @@ body{
 
 /*tweet cards*/
 #stream .tweet-cards{
-	background-color: #D5DFE3;
-	width:30%;
-	height:300px;
-	margin-bottom:20px;
+	background-color: #F4F4F4;
+	width:27%;
+	height:362px;
+	margin: 10px 30px 30px 30px;
 	border-radius: 10px;
 	float: left;
-	margin-right:13px;
-	margin-left:13px;
+	box-shadow: 3px 3px 3px #007BA8;
 }
 
 .tweet-cards .card-top{
-	background-color: #5B5D69;
+	background-color: #007BA8;
+	border-bottom: 4px solid #006E96;
 	height:30%;
 	border-radius: 10px 10px 0px 0px;
 }
 
+.tweet-cards .profile-pic{
+	height:60px;
+}
+
 .tweet-cards .profile-pic img{
 	width:100px;
+	height:100px;
 	border-radius: 50%;
 	position: relative;
-	top:-62px;
-	left:34%;
+	margin-top:-52px;
+	left:33.3%;
 	border: 5px solid white;
 }
 
+
+/*card bottom*/
 p#name{
-	display:inline-block;
+	text-align:center;
+}
+
+p#name a{
+	text-decoration: none;
+	font-family: arial, helvetica;
+	color: #007BA8;
+	font-weight:bold;
+	position: relative;
+}
+
+.tweet{
 	position:relative;
-	top:-26px;
-	left:10px;
+	width:260px;
+	height:102px;
+	word-wrap: break-word;
+	text-align: center;
+	margin: auto;
+	font-family: helvetica;
+	font-size: 0.95em;
+	color: #6B6B6B;
 }
 
 p#date{
 	position:relative;
-	top:-55px;
-	left:56px;
-}
-
-.profile-pic{
-	padding-top:10px;
-	margin-bottom:-56px;
-}
-
-#tweet{
-	position:relative;
-	padding-bottom:10px;
-	padding-left:10px;
-	padding-top:-10px;
+	text-align:left;
+	margin-left:8px;
+	font-family: helvetica;
+	font-size:0.8em;
+	color: #6B6B6B;
 }
 
 #footer{
