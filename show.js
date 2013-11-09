@@ -1,4 +1,4 @@
-var search_url = 'http://search.twitter.com/search.json?q=';
+var search_url = 'https://api.twitter.com/1.1/search/tweets.json?q=';
 
 function runScript(e) {
     if (e.keyCode == 13) {
@@ -12,7 +12,8 @@ function searchTwitter()
 
 	$.ajax({
 		type: 'GET',
-		url: search_url + queryTerm + '&rpp=90',
+		url: search_url + queryTerm,
+		// '&rpp=90',
 		dataType: 'jsonp',
 		success: function(result){
 			showTweets(result);
@@ -25,9 +26,9 @@ function showTweets(result){
 
 	result.results.forEach(function(that){
 
-		
+
 		var name = that.from_user;
-		var pictureURL = 'https://api.twitter.com/1/users/profile_image?screen_name=' + name + '&size=bigger';
+		var pictureURL = 'https://api.twitter.com/1.1/users/profile_image?screen_name=' + name + '&size=bigger';
 		var date = that.created_at;
 		var index = date.indexOf("+");
 		var message = that.text;
