@@ -11,8 +11,8 @@ app.configure(function() {
 config = {
   twitterURL: 'https://api.twitter.com',
   // api key and secret deleted for privacy measures, replace themw ith your own
-  apiKey: '',
-  apiSecret: '',
+  apiKey: 'XsFzPR0qYOmQP3TqM8ImOQ',
+  apiSecret: 'anA516UDZOBHQK2mYlLX4yiGAQXAAGCZzyUv7mPuWvo',
 };
 
 // request definition
@@ -74,5 +74,6 @@ requestTweets = function(token, keyword, success) {
 }
 
 // start listening
-app.listen(8080);
-console.log("App listening on port 8080");
+var port = process.env.PORT || 5000;
+app.listen(port);
+console.log("App listening on port" + port);
