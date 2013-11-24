@@ -2,42 +2,42 @@
 
 <html ng-app="tweetFinderApp">
 <head>
-	<!-- meta -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="keywords" content="Victor Mak, victor mak waterloo, victor mak computer science, v2mak"/>
-	<meta name="google-site-verification" content="avIVMZKEOE-9ZkHjdW-oJT1o-4jWRjh1hH-5s4NbFgg"/>
-	<meta name="author" content="Victor Mak"/>
+  <!-- meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="keywords" content="Victor Mak, victor mak waterloo, victor mak computer science, v2mak"/>
+  <meta name="google-site-verification" content="avIVMZKEOE-9ZkHjdW-oJT1o-4jWRjh1hH-5s4NbFgg"/>
+  <meta name="author" content="Victor Mak"/>
 
-	<title>Tweet Finder</title>
-	<!-- styles -->
-	<link href="style.css" rel="stylesheet" type="text/css"/>
+  <title>Tweet Finder</title>
+  <!-- styles -->
+  <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-	<h1 id="title">Tweet Finder</h1>
-	<div class="container" ng-controller="tweetFinderController">
-		<form ng-submit="getTweets()">
-			<input id="input-keyword-area" type="text" name="keyword" placeholder="Enter A Term To Search" value= " " ng-model="tweet.keyword">
-		</form>
-		<section class="results">
-			<ul>
-				<li class="tweet-cards" ng-repeat="tweet in tweets">
-					<div class="card-top"></div>
-					<div class="profile-pic">
-   					<img src="{{tweet.userProfileImageURL}}"/>
-  				</div>
-  				 <div class="card-bottom">
-			      <p id="name">
-			        <a href="{{tweet.userProfileURL}}" target="_blank">{{tweet.userScreenName}}</a>
-			      </p>
-			      <div class="tweet">{{tweet.message}}</div>
-			      <p id="date">{{tweet.date}}</p>
-			    </div>
-			  </li>
-			</ul>
-		</section>
-	</div>
-	<!-- scripts -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
-	<script type="text/javascript" src="core.js"></script>
+  <h1 id="title">Tweet Finder</h1>
+  <div class="container" ng-controller="tweetFinderController">
+    <form ng-submit="getTweets()">
+      <input id="input-keyword-area" type="text" name="keyword" placeholder="Enter A Term To Search" value= " " ng-model="tweet.keyword">
+    </form>
+    <section class="results">
+      <ul>
+        <li class="tweet-cards" ng-repeat="tweet in tweets">
+          <div class="card-top"></div>
+          <div class="profile-pic">
+            <img src="{{tweet.userProfileImageURL}}"/>
+          </div>
+           <div class="card-bottom">
+            <p id="name">
+              <a href="{{tweet.userProfileURL}}" target="_blank">{{tweet.userScreenName}}</a>
+            </p>
+            <div class="tweet">{{tweet.message}}</div>
+            <p id="date">{{tweet.date}}</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <!-- scripts -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+  <script type="text/javascript" src="core.js"></script>
 </body>
