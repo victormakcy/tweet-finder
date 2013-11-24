@@ -1,0 +1,12 @@
+{
+  "name": "tweet-finder",
+  "version": "0.0.1",
+  "description": "Simple keyword finding tweet application.",
+  "main": "server.js",
+  "author": "Victor Mak",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.x",
+    "request": "~2.21.0"
+  }
+}
