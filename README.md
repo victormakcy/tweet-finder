@@ -6,7 +6,7 @@ Twitter Tweet Keyword Finder written with a MEAN (MongoDB, Express.js, Angular.j
 Setup
 ============
 
-1. I have removed my personal Twitter api key and seceret. To get your own create an application at https://dev.twitter.com/apps
+1. I have removed my personal Twitter api key and seceret. To get your own, create an application at https://dev.twitter.com/apps
 2. Install the dependencies: `npm install`
 
 Running
