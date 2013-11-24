@@ -10,7 +10,7 @@ app.configure(function() {
 // configure
 config = {
   twitterURL: 'https://api.twitter.com',
-  // api key and secret deleted for privacy measures, replace themw ith your own
+  // api key and secret deleted for privacy measures, replace them with your own
   apiKey: '',
   apiSecret: '',
 };
