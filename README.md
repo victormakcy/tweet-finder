@@ -18,7 +18,7 @@ Running
 ============
 
 1. To run locally, run: `node server.js`
-2. Navigate to http://localhost:8080 to start using
+2. Navigate to http://localhost:5000 to start using
 
 
 

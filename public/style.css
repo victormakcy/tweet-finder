@@ -6,12 +6,12 @@ body, html {
 
 h1, ul {
   margin: 0;
+  padding: 0;
 }
 
-#title{
+#title {
   font-family: courier, helvetica, arial;
   color: white;
-  position: relative;
   margin: 20px auto;
   font-size: 100px;
 }
@@ -20,27 +20,24 @@ form {
   margin: 20px 0;
 }
 
-#input-keyword-area{
+#input-keyword-area {
   width: 610px;
   font-size: 26px;
   border-radius:5px;
-  position:relative;
 }
 
 /*tweets area*/
-.results{
-  position: relative;
-  max-width: 1123px;
-  margin: 0 auto;
-  width: 90%;
+.results {
+  width: 1029px;
+  margin: 0 auto 30px auto;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
 /*tweet cards*/
-.tweet-cards{
+.tweet-cards {
   background-color: #F4F4F4;
   width: 323px;
   height: 362px;
@@ -50,18 +47,18 @@ ul{
   box-shadow: 3px 3px 3px #007BA8;
 }
 
-.tweet-cards .card-top{
+.tweet-cards .card-top {
   background-color: #007BA8;
   border-bottom: 4px solid #006E96;
   height: 30%;
   border-radius: 2px 2px 0px 0px;
 }
 
-.tweet-cards .profile-pic{
+.tweet-cards .profile-pic {
   height: 60px;
 }
 
-.tweet-cards .profile-pic img{
+.tweet-cards .profile-pic img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -71,11 +68,11 @@ ul{
 }
 
 /*card bottom*/
-p#name{
+p#name {
   text-align:center;
 }
 
-p#name a{
+p#name a {
   text-decoration: none;
   font-family: arial, helvetica;
   color: #007BA8;
@@ -83,7 +80,7 @@ p#name a{
   position: relative;
 }
 
-.tweet{
+.tweet {
   position: relative;
   width: 260px;
   height: 102px;
@@ -96,11 +93,21 @@ p#name a{
   color: #545454;
 }
 
-p#date{
+p#date {
   position: relative;
   text-align: right;
   margin: 0 25px 15px 0;
   font-family: helvetica;
   font-size: 0.8em;
   color: #919191;
+}
+
+.clear {
+  float: none;
+  clear: both;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
 }

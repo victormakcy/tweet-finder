@@ -10,9 +10,9 @@ app.configure(function() {
 // configure
 config = {
   twitterURL: 'https://api.twitter.com',
-  // api key and secret deleted for privacy measures, replace themw ith your own
-  apiKey: 'XsFzPR0qYOmQP3TqM8ImOQ',
-  apiSecret: 'anA516UDZOBHQK2mYlLX4yiGAQXAAGCZzyUv7mPuWvo',
+  // api key and secret deleted for privacy measures, replace them with your own
+  apiKey: '',
+  apiSecret: '',
 };
 
 // request definition
@@ -76,4 +76,4 @@ requestTweets = function(token, keyword, success) {
 // start listening
 var port = process.env.PORT || 5000;
 app.listen(port);
-console.log("App listening on port" + port);
+console.log("App listening on port " + port);
