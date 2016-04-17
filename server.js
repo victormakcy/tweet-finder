@@ -1,30 +1,20 @@
 // set up
 var express = require('express');
+var request = require('request');
+var config = require('./config')
 var app     = express();
 
-// express configuration
-app.configure(function() {
-  app.use(express.static(__dirname + '/public')); // set the static files location for assets
-});
-
-// configure
-config = {
-  twitterURL: 'https://api.twitter.com',
-  // api key and secret deleted for privacy measures, replace them with your own
-  apiKey: '',
-  apiSecret: '',
-};
-
-// request definition
-request = (require('request')).defaults({
-    strictSSL: true
-});
+/**
+ * Express Configurations - set the static files location for assets
+ */
+app.use(express.static(__dirname + '/public'));
 
 // routes
 app.get('/api/tweets', function(req, res) {
   var keyword = req.query.q;
+  var conf = config.get();
 
-  requestBearerToken(config.apiKey, config.apiSecret, function(token) {
+  requestBearerToken(conf.consumer_key, conf.consumer_secret, function(token) {
     requestTweets(token, keyword, function(data) {
       res.send(data.statuses);
     });
@@ -49,7 +39,7 @@ requestBearerToken = function(apiKey, apiSecret, success) {
     }
   }
 
-  request.post(config.twitterURL + '/oauth2/token', options, function(err, response, body) {
+  request.post('https://api.twitter.com/oauth2/token', options, function(err, response, body) {
     var data = JSON.parse(body);
     token = data.access_token;
     return success(token);
@@ -67,7 +57,7 @@ requestTweets = function(token, keyword, success) {
     }
   }
 
-  request.get(config.twitterURL + '/1.1/search/tweets.json', option, function(err, response, body) {
+  request.get('https://api.twitter.com/1.1/search/tweets.json', option, function(err, response, body) {
     var data = JSON.parse(body);
     return success(data);
   });

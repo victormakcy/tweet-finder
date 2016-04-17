@@ -1,12 +1,23 @@
 {
   "name": "tweet-finder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple keyword finding tweet application.",
   "main": "server.js",
   "author": "Victor Mak",
-  "license": "BSD",
+  "license": "ISC",
   "dependencies": {
-    "express": "~3.x",
-    "request": "~2.21.0"
-  }
+    "express": "~4.x",
+    "request": "~2.71.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victormakcy/tweet-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/victormakcy/tweet-finder/issues"
+  },
+  "homepage": "https://github.com/victormakcy/tweet-finder#readme"
 }
