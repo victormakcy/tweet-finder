@@ -1,52 +1,65 @@
-// set up
 var express = require('express');
 var request = require('request');
+var path = require('path');
 var config = require('./config')
-var app     = express();
+var app = express();
 
 /**
  * Express Configurations - set the static files location for assets
  */
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client'));
 
-// routes
+/**
+ * Get all tweets request definition
+ */
 app.get('/api/tweets', function(req, res) {
   var keyword = req.query.q;
-  var conf = config.get();
 
-  requestBearerToken(conf.consumer_key, conf.consumer_secret, function(token) {
+  requestBearerToken(function(token) {
     requestTweets(token, keyword, function(data) {
       res.send(data.statuses);
     });
   });
 });
 
+/**
+ * Load the index template
+ */
 app.get('*', function(req, res) {
-  res.sendfile('./public/index.html'); // load the front-end page
+  res.sendFile(path.join(__dirname, '/client/index.html'));
 });
 
-// helper functions
-// calls twitter oauth 2 for a bearer token used for applicaiton-only authorization
-requestBearerToken = function(apiKey, apiSecret, success) {
-  var token;
-  options = {
-    auth: {
-          user: apiKey,
-          pass: apiSecret
-      },
-    form: {
-      grant_type: 'client_credentials'
-    }
-  }
+/**
+ * Calls Twitter OAuth 2.0 for a bearer token used for applicaiton-only authorization
+ * @param {Function} cb
+ */
+requestBearerToken = function(cb) {
+  var conf = config.get(),
+      httpOptions = {
+        auth: {
+          user: conf.consumer_key,
+          pass: conf.consumer_secret
+        },
+        form: {
+          grant_type: 'client_credentials'
+        }
+      }
 
-  request.post('https://api.twitter.com/oauth2/token', options, function(err, response, body) {
-    var data = JSON.parse(body);
-    token = data.access_token;
-    return success(token);
+  request.post('https://api.twitter.com/oauth2/token', httpOptions, function(err, response, body) {
+    var data = JSON.parse(body),
+        token = data.access_token;
+
+    return cb(token);
   });
 };
 
-requestTweets = function(token, keyword, success) {
+/**
+ * Get Tweets based on keyword
+ * @param {String} token
+ * @param {String} keyword
+ * @param {Function} cb
+ */
+requestTweets = function(token, keyword, cb) {
   option = {
     headers: {
       Authorization: "Bearer " + token
@@ -59,7 +72,7 @@ requestTweets = function(token, keyword, success) {
 
   request.get('https://api.twitter.com/1.1/search/tweets.json', option, function(err, response, body) {
     var data = JSON.parse(body);
-    return success(data);
+    return cb(data);
   });
 }
 
