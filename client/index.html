@@ -12,7 +12,7 @@
 
 <body>
   <h1 id="title">Tweet Finder</h1>
-  <div class="container" ng-controller="tweetFinderController">
+  <div class="container" ng-controller="TweetFinderController">
     <form ng-submit="getTweets()">
       <input id="input-keyword-area" type="text" name="keyword" placeholder="Enter A Term To Search" value= " " ng-model="tweet.keyword">
     </form>
@@ -36,6 +36,6 @@
     </section>
   </div>
   <!-- scripts -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
-  <script type="text/javascript" src="core.js"></script>
+  <script type="text/javascript" src="assets/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="public/js/app.min.js"></script>
 </body>

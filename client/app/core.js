@@ -1,6 +1,4 @@
-var tweetFinder = angular.module('tweetFinderApp', []);
-
-function tweetFinderController($scope, $http) {
+TweetFinder.controller('TweetFinderController', ['$scope', '$http', function($scope, $http) {
 
   $scope.getTweets = function() {
     // reset our tweets array every search
@@ -26,4 +24,5 @@ function tweetFinderController($scope, $http) {
     }
 
   }
-};
+}]);
+
