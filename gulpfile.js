@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     bower = require('gulp-bower'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
 
 var config = {
   lib: './client/assets/lib'
@@ -18,6 +18,14 @@ gulp.task('uglify', function () {
     .pipe(gulp.dest('client/public/js'));
 });
 
+gulp.task('watch', function () {
+    var watchFiles = [
+        'client/app/**/*'
+    ]
+
+    return gulp.watch(watchFiles, ['dist']);
+});
+
 gulp.task('dist', ['uglify']);
 
-gulp.task('default', ['bower']);
+gulp.task('default', ['bower', 'watch']);

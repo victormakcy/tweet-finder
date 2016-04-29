@@ -1,5 +1,5 @@
 {
-    "name": "PostBeyondCodeChallenge",
+    "name": "tweet-finder",
     "version": "0.0.2",
     "dependencies": {
         "angular": "~1.5.5",
