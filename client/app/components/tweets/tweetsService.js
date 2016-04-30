@@ -1,5 +1,4 @@
 TweetFinder.factory('tweetsService', [ "$http", function($http) {
-
   var transformTweets = function (tweets) {
     var transformedTweets = [];
 
@@ -31,5 +30,4 @@ TweetFinder.factory('tweetsService', [ "$http", function($http) {
       });
     }
   };
-
 }]);

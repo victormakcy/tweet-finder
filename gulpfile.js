@@ -28,4 +28,4 @@ gulp.task('watch', function () {
 
 gulp.task('dist', ['uglify']);
 
-gulp.task('default', ['bower', 'watch']);
+gulp.task('default', ['bower', 'dist', 'watch']);
