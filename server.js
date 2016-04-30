@@ -66,7 +66,7 @@ requestTweets = function(token, keyword, cb) {
     },
     qs: {
       q: keyword,
-      count: 50
+      count: 48
     }
   }
 

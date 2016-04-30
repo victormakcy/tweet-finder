@@ -21,15 +21,23 @@ form {
 }
 
 #input-keyword-area {
-  width: 610px;
-  font-size: 26px;
-  border-radius:5px;
+  max-width: 950px;
+  padding: 6px 15px;
+  width: 80%;
+  font-size: 24px;
+  border-radius:6px;
 }
 
 /*tweets area*/
 .results {
-  width: 1029px;
+  max-width: 1300px;
   margin: 0 auto 30px auto;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-wrap: wrap; /* Safari */
+  flex-wrap:         wrap;
+  -webkit-justify-content: center; /* Safari */
+  justify-content:         center;
 }
 
 ul {
@@ -43,7 +51,6 @@ ul {
   height: 362px;
   margin: 10px 10px 30px 10px;
   border-radius: 2px;
-  float: left;
   box-shadow: 3px 3px 3px #007BA8;
 }
 
