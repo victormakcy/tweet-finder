@@ -13,10 +13,12 @@ app.use(express.static(__dirname + '/client'));
  * Get all tweets request definition
  */
 app.get('/api/tweets', function(req, res) {
-  var keyword = req.query.q;
+  var keyword = req.query.q,
+      count = req.query.count,
+      maxId = req.query.max_id;
 
   requestBearerToken(function(token) {
-    requestTweets(token, keyword, function(data) {
+    requestTweets(token, keyword, count, maxId, function(data) {
       res.send(data.statuses);
     });
   });
@@ -59,15 +61,22 @@ requestBearerToken = function(cb) {
  * @param {String} keyword
  * @param {Function} cb
  */
-requestTweets = function(token, keyword, cb) {
+requestTweets = function(token, keywords, count, maxId, cb) {
+  var queryParams = {
+    q: keywords,
+    result_type: "recent",
+    count: count
+  }
+
+  if (maxId) {
+    queryParams.max_id = maxId;
+  }
+
   option = {
     headers: {
       Authorization: "Bearer " + token
     },
-    qs: {
-      q: keyword,
-      count: 48
-    }
+    qs: queryParams
   }
 
   request.get('https://api.twitter.com/1.1/search/tweets.json', option, function(err, response, body) {

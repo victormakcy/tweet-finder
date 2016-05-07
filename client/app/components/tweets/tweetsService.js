@@ -7,6 +7,7 @@ TweetFinder.factory('tweetsService', [ "$http", function($http) {
       var date = tweet.created_at.substr(0,index-1)
 
       transformedTweets.push({
+        "id": tweet.id,
         "userProfileImageURL": (tweet.user.profile_image_url).replace("normal","bigger"),
         "userScreenName": '@' + tweet.user.screen_name,
         "userProfileURL": 'https://www.twitter.com/' + tweet.user.screen_name,
@@ -19,10 +20,10 @@ TweetFinder.factory('tweetsService', [ "$http", function($http) {
   }
 
   return {
-    getTweets: function(keywords) {
+    getTweets: function(keywords, count, maxId) {
       return $http({
         method: 'GET',
-        url: '/api/tweets?q=' + keywords
+        url: '/api/tweets?q=' + encodeURIComponent(keywords) + '&count=' + count + '&max_id=' + maxId
       }).then( function (res) {
         return transformTweets(res.data);
       }, function (err) {

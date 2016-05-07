@@ -16,12 +16,20 @@
     <form ng-submit="getTweets()">
       <input id="input-keyword-area" type="text" name="keyword" placeholder="Enter A Term To Search" value= " " ng-model="keywords">
     </form>
-    <div class="results">
+    <div ng-show="showInstructions" class="content">
+      Enter keywords to earch and press enter!
+    </div>
+    <div ng-show="!showInstructions" class="results">
       <div ng-repeat="tweet in tweets">
         <tweet-directive></tweet-directive>
       </div>
     </div>
+
+    <button ng-click="getMoreTweets()">
+      more results
+    </button>
   </div>
+
   <!-- scripts -->
   <script type="text/javascript" src="assets/lib/angular/angular.min.js"></script>
   <script type="text/javascript" src="public/js/app.min.js"></script>

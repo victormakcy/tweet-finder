@@ -20,7 +20,8 @@ gulp.task('uglify', function () {
 
 gulp.task('watch', function () {
     var watchFiles = [
-        'client/app/**/*'
+        'client/app/**/*',
+        'client/index.html'
     ]
 
     return gulp.watch(watchFiles, ['dist']);
