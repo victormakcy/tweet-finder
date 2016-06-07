@@ -6,27 +6,32 @@
   <title>Tweet Finder</title>
 
   <!-- styles -->
-  <!-- <link rel="stylesheet" type="text/css" href="public/css/application.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="public/css/app.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+
 </head>
 
 <body>
-  <h1 id="title">Tweet Finder</h1>
+  <h1 class="title">Tweet Finder</h1>
   <div class="container" ng-controller="TweetFinderController">
     <form ng-submit="getTweets()">
-      <input id="input-keyword-area" type="text" name="keyword" placeholder="Enter A Term To Search" value= " " ng-model="keywords">
+      <input class="keyword-input" type="text" name="keyword" placeholder="Enter keywords to search for and press enter!" value= " " ng-model="keywords">
     </form>
-    <div ng-show="showInstructions" class="content">
-      Enter keywords to earch and press enter!
-    </div>
-    <div ng-show="!showInstructions" class="results">
+    <div ng-show="!loadingNewTweets" class="results">
       <div ng-repeat="tweet in tweets">
         <tweet-directive></tweet-directive>
       </div>
     </div>
 
-    <button ng-click="getMoreTweets()">
-      more results
+    <div ng-cloak ng-show="loadingNewTweets || loadingMoreTweets" class="load-more__container">
+      <i class="fa fa-spinner fa-spin"></i>
+      <div>Loading...</div>
+    </div>
+
+    <button ng-cloak ng-show="!loadingNewTweets && !loadingMoreTweets && (tweets.length!=0)" class="btn btn-primary btn__load-more" ng-click="getMoreTweets()">
+      Load more
     </button>
   </div>
 

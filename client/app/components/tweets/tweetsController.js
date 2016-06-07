@@ -1,9 +1,13 @@
 TweetFinder.controller('TweetFinderController', ['$scope', 'tweetsService', function($scope, tweetsService) {
-  $scope.showInstructions = true;
+  $scope.loadingNewTweets = false;
+  $scope.loadingMoreTweets = false;
+  $scope.tweets = [];
 
   $scope.getTweets = function() {
+    $scope.loadingNewTweets = true;
+
     tweetsService.getTweets($scope.keywords, 21, null).then( function (result) {
-      $scope.showInstructions = false;
+      $scope.loadingNewTweets = false;
       $scope.tweets = result;
     }, function () {
       return;
@@ -13,10 +17,12 @@ TweetFinder.controller('TweetFinderController', ['$scope', 'tweetsService', func
   $scope.getMoreTweets = function() {
     var lastItem = $scope.tweets[$scope.tweets.length - 1];
 
+    $scope.loadingMoreTweets = true;
     tweetsService.getTweets($scope.keywords, 22, lastItem.id).then( function (result) {
       if (!result.length) return;
       result.splice(0, 1);
       $scope.tweets = $scope.tweets.concat(result);
+      $scope.loadingMoreTweets = false;
     }, function () {
       return;
     });

@@ -1,3 +1,7 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 body, html {
   margin: 0;
   background-color:#00AAE7;
@@ -9,7 +13,7 @@ h1, ul {
   padding: 0;
 }
 
-#title {
+.title {
   font-family: courier, helvetica, arial;
   color: white;
   margin: 20px auto;
@@ -20,12 +24,18 @@ form {
   margin: 20px 0;
 }
 
-#input-keyword-area {
+.keyword-input {
   max-width: 950px;
   padding: 6px 15px;
   width: 80%;
   font-size: 24px;
   border-radius:6px;
+}
+
+.instructions {
+  font-size: 20px;
+  color: #fff;
+  // padding-top: 50px;
 }
 
 /*tweets area*/
@@ -34,14 +44,28 @@ form {
   margin: 0 auto 30px auto;
   display: -webkit-flex; /* Safari */
   display: flex;
-  -webkit-flex-wrap: wrap; /* Safari */
-  flex-wrap:         wrap;
+  -webkit-flex-wrap:        wrap; /* Safari */
+  flex-wrap:                wrap;
   -webkit-justify-content: center; /* Safari */
   justify-content:         center;
 }
 
 ul {
   list-style-type: none;
+}
+
+.btn__load-more {
+  margin-bottom: 30px;
+}
+
+.load-more__container {
+  font-size: 40px;
+  margin: 150px 0;
+  color: #fff;
+}
+
+.load-more__container i {
+  font-size: 60px;
 }
 
 /*tweet cards*/
