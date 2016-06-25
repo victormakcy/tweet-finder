@@ -1,6 +1,6 @@
 var config = {
-  consumer_key: "XsFzPR0qYOmQP3TqM8ImOQ",
-  consumer_secret: "anA516UDZOBHQK2mYlLX4yiGAQXAAGCZzyUv7mPuWvo"
+  consumer_key: "YOUR_CONSUMER_KEY_HERE",
+  consumer_secret: "YOUR_CONSUMER_SECRET_HERE"
 };
 
 var exports = module.exports = {};
