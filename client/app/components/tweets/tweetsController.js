@@ -3,6 +3,7 @@ TweetFinder.controller('TweetFinderController', ['$scope', 'tweetsService', func
   $scope.loadingMoreTweets = false;
   $scope.tweets = [];
 
+
   $scope.getTweets = function() {
     $scope.loadingNewTweets = true;
 
@@ -10,6 +11,7 @@ TweetFinder.controller('TweetFinderController', ['$scope', 'tweetsService', func
       $scope.loadingNewTweets = false;
       $scope.tweets = result;
     }, function () {
+      debugger;
       return;
     });
   }
